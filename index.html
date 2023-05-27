@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Egresados - Molachino Exclusivo</title>
+		<link rel="stylesheet" href="./css/Style1.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap"
+			rel="stylesheet" />
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div>
+					<img class="logo" src="img/Molachino Blanco.png" alt="" />
+				</div>
+			</div>
+		</header>
+
+		<div class="container">
+			<div class="login-box">
+				<h2>Acceso Padres</h2>
+				<form>
+					<div class="user-box">
+						<input type="text" name="" required="" />
+						<label>Usuario</label>
+					</div>
+					<div class="user-box">
+						<input type="password" name="" required="" />
+						<label>Contraseña</label>
+					</div>
+					<button type="submit">Ingresar</button>
+				</form>
+			</div>
+
+			<div class="ip" id="location"></div>
+		</div>
+
+		<script>
+			fetch("https://ipapi.co/json/")
+				.then((response) => response.json())
+				.then((data) => {
+					document.getElementById("location").innerHTML =
+						"Su ubicación: " +
+						data.city +
+						"<br>Su País: " +
+						data.country_name +
+						"<br>Su IP: " +
+						data.ip;
+				});
+		</script>
+		<footer>
+			<div id="footer">
+				<p>&copy; 2023 Sebastian Macharette. Todos los derechos reservados.</p>
+			</div>
+		</footer>
+	</body>
+</html>
